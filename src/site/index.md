@@ -64,5 +64,5 @@ outputs this html:
 
 For examples and documentation about how to start using [Netlify Large Media](https://www.netlify.com/features/large-media/), you should [visit the docs](https://www.netlify.com/docs/large-media/).
 
-Need some reference code to get you going? You can use this site as an example, by [cloning it and creating a Netlify site automatically](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit) which you can then configure.
+Need some reference code to get you going? You can use this site as an example, by [cloning it and creating a Netlify site automatically](https://app.netlify.com/start/deploy?repository={{ pkg.repository.url }}) which you can then configure.
 

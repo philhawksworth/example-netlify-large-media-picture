@@ -1,13 +1,13 @@
-# Example: Netlify Large Media and srcset
+# Example: Netlify Large Media and picture
 
-This is an example site to demonstrate the use of Netlify Large Media for managing source image assets and serving image transformations on-the-fly to populate different source images.
+This is an example site to demonstrate the use of Netlify Large Media for managing source image assets and serving image transformations on-the-fly to populate different source images in picture elements.
 
 
 ## Instructions
 
 To get your own instance of this 11ty starter project cloned and deploying to Netlify very quickly, just click the button below and follow the instructions.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/example-netlify-large-media-srcset)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/example-netlify-large-media-picture)
 
 
 ## Wait, what happens when I click that button?
@@ -32,7 +32,7 @@ To build the site you need:
 ```bash
 
 # clone this repository
-git clone git@github.com:philhawksworth/example-netlify-large-media-srcset.git
+git clone git@github.com:philhawksworth/example-netlify-large-media-picture.git
 
 # go to the working directory
 cd example-netlify-large-media-srcset

@@ -1,4 +1,4 @@
-// Generate an image tag using srcset for Netlify Large Media urls with image transforms
+// Generate an picture tag with image src URLs which use Neltify image transforms
 
 module.exports = (url, alt = "Missing alt text") => {
   return `<picture>
