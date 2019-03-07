@@ -62,7 +62,7 @@ outputs this html:
 
 ## Get started with Netlify Large Media
 
-For examples and documentation about how to start using [Netlify Large Media](https://www.netlify.com/features/large-media/), you should [visit the docs](https://www.netlify.com/docs/large-media/).
+Need some reference code to get you going? You can clone [the code for this site]({{ pkg.repository.url }}) to use as an example.
 
-Need some reference code to get you going? You can use this site as an example, by [cloning it and creating a Netlify site automatically](https://app.netlify.com/start/deploy?repository={{ pkg.repository.url }}) which you can then configure.
+Once cloned, you can find examples and documentation on how to configure [Netlify Large Media](https://www.netlify.com/features/large-media/), in [the docs](https://www.netlify.com/docs/large-media/).
 

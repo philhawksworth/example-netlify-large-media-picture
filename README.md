@@ -3,22 +3,6 @@
 This is an example site to demonstrate the use of Netlify Large Media for managing source image assets and serving image transformations on-the-fly to populate different source images in picture elements.
 
 
-## Instructions
-
-To get your own instance of this example site cloned and deploying to Netlify very quickly, just click the button below and follow the instructions.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/example-netlify-large-media-picture)
-
-
-## Wait, what happens when I click that button?
-
-Good question. Here's what it will do...
-
-1. Netlify will clone the git repository of this project into your Github account. It will be asking for permission to add the repo for you.
-2. We'll create a new site for you in Netlify, and configure it to use your shiny new repo. Right away you'll be able to deploy changes simply by pushing changes to your repo.
-3. That's it really.
-
-
 ## Local development
 
 To build the site you need:
@@ -44,4 +28,6 @@ yarn
 yarn start
 ```
 
+### Configuring your own Netlify Large Media workflow
 
+After cloning this repo, you can set it up as a site of your own on Netlify, and configure the Netlify Large Media pipeline by following the [guidance in the docs](https://netlify.slack.com/archives/CC4RDDL31/p1551975493043300)
