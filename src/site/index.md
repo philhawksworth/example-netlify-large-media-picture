@@ -12,9 +12,9 @@ Netlify transforms your image assets if add querystring parameters to your image
 
 For example, the image below in various sizes:
 
-- [cupcake.jpg?nf_resize=fit&w320](/images/cupcake.jpg?nf_resize=fit&w380)
-- [cupcake.jpg?nf_resize=fit&w480](/images/cupcake.jpg?nf_resize=fit&w480)
-- [cupcake.jpg?nf_resize=fit&w800](/images/cupcake.jpg?nf_resize=fit&w800)
+- [cupcake.jpg?nf_resize=fit&w=320](/images/cupcake.jpg?nf_resize=fit&w=380)
+- [cupcake.jpg?nf_resize=fit&w=480](/images/cupcake.jpg?nf_resize=fit&w=480)
+- [cupcake.jpg?nf_resize=fit&w=800](/images/cupcake.jpg?nf_resize=fit&w=800)
 
 
 ## Using srcset
@@ -52,13 +52,13 @@ This shortcode:
 outputs this html:
 
 ```html
-<img srcset="/images/photo.jpg?nf_resize=fit&w320 320w,
-             /images/photo.jpg?nf_resize=fit&w480 480w,
-             /images/photo.jpg?nf_resize=fit&w800 800w"
+<img srcset="/images/photo.jpg?nf_resize=fit&w=320 320w,
+             /images/photo.jpg?nf_resize=fit&w=480 480w,
+             /images/photo.jpg?nf_resize=fit&w=800 800w"
      sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
             800px"
-     src="/images/photo.jpg?nf_resize=fit&w800">
+     src="/images/photo.jpg?nf_resize=fit&w=800">
 ```
 
 
