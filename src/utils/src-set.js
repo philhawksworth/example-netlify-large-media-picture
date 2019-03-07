@@ -7,6 +7,6 @@ module.exports = (url, alt = "Missing alt text") => {
               sizes="(max-width: 320px) 280px,
                      (max-width: 480px) 440px,
                       800px"
-              src="/images/${url}?nf_resize=fit&w800"
+              src="/images/${url}?nf_resize=fit&w=s800"
               alt="${alt}">`;
 };
