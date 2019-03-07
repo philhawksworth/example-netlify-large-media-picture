@@ -1,13 +1,13 @@
 {
-  "name": "EleventyOne",
-  "version": "2.0.0",
-  "description": "A project bootstrap for Eleventy sites. With pipelines for Sass, Js, and Lambdas",
+  "name": "Netlifu-large-media-picture-exmaple",
+  "version": "1.0.0",
+  "description": "An example of using Netlify Large Media and Eleventy to generate different image sources for the picture element",
   "author": "Phil Hawksworth",
   "license": "MIT",
   "scripts": {
     "start": "yarn run dev",
     "dev": "gulp dev & ELEVENTY_ENV=dev eleventy --serve",
-    "build": "gulp build & ELEVENTY_ENV=dev eleventy"
+    "build": "gulp build & ELEVENTY_ENV=prod eleventy"
   },
   "repository": {
     "type": "git",

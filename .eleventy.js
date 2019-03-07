@@ -16,7 +16,7 @@ module.exports = function(config) {
   }
 
   // A responsive image helper using Netlify Large Media - image transformation
-  config.addShortcode("imageSet", require("./src/utils/src-set.js"));
+  config.addShortcode("picture", require("./src/utils/picture.js"));
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");

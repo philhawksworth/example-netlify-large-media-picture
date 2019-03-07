@@ -1,5 +1,5 @@
 ---
-title: Netlify Large Media & SrcSet
+title: Netlify Large Media and the picture element
 layout: default
 ---
 
@@ -12,14 +12,14 @@ Netlify transforms your image assets if add querystring parameters to your image
 
 For example, the image below in various sizes:
 
-- [cupcake.jpg?nf_resize=fit&w=320](/images/cupcake.jpg?nf_resize=fit&w=380)
-- [cupcake.jpg?nf_resize=fit&w=480](/images/cupcake.jpg?nf_resize=fit&w=480)
+- [cupcake.jpg?nf_resize=fit&w=500](/images/cupcake.jpg?nf_resize=fit&w=500)
+- [cupcake.jpg?nf_resize=fit&w=600](/images/cupcake.jpg?nf_resize=fit&w=600)
 - [cupcake.jpg?nf_resize=fit&w=800](/images/cupcake.jpg?nf_resize=fit&w=800)
 
 
-## Using srcset
+## Using the picture element
 
-These images have been added to the page in various sizes, using the image srcset attribute.
+These images have been added to the page in various sizes, using the picture element with multiple image sources.
 
 {% set somePhotos = [
   {url: "cupcake.jpg", credit: "Nathalie Jolie", creditURL: "https://unsplash.com/photos/2XK4UufbjdU"},
@@ -30,35 +30,33 @@ These images have been added to the page in various sizes, using the image srcse
 <section class="post-teaser">
 {%- for photo in somePhotos %}
   <div class="credit">By <a href="{{ photo.creditURL }}" target="_BLANK" rel="noopener"> {{ photo.credit }}</a></div>
-  {% imageSet photo.url, "Yummy cake" %}
+  {% picture photo.url, "Yummy cake" %}
 {%- endfor -%}
 </section >
 
 
-## A srcset helper
+## A picture helper
 
 Whatever tool you use to generate your HTML, chances are that it includes a facility to make shortcodes or macros.
 
-This example uses a static site generator called [11ty](https://www.11ty.io) which gives us the ability to make a [shortcode](https://www.11ty.io/docs/shortcodes/) to output img tags and srcset attributes with image transformation parameters automatically added to the urls.
+This example uses a static site generator called [11ty](https://www.11ty.io) which gives us the ability to make a [shortcode](https://www.11ty.io/docs/shortcodes/) to output picture tags with many image source attributes including  transformation parameters automatically added to the image urls.
 
 This shortcode:
 
 ```html
 {%- raw -%}
-{% imageSet photo.jpg %}
+{% picture photo.jpg "yummy cake" %}
 {% endraw %}
 ```
 
 outputs this html:
 
 ```html
-<img srcset="/images/photo.jpg?nf_resize=fit&w=320 320w,
-             /images/photo.jpg?nf_resize=fit&w=480 480w,
-             /images/photo.jpg?nf_resize=fit&w=800 800w"
-     sizes="(max-width: 320px) 280px,
-            (max-width: 480px) 440px,
-            800px"
-     src="/images/photo.jpg?nf_resize=fit&w=800">
+<picture>
+  <source srcset="/images/photo.jpg?nf_resize=fit&w=700" media="(min-width: 1200px)">
+  <source srcset="/images/photo.jpg?nf_resize=fit&w=600" media="(min-width: 740px)">
+  <img src="/images/photo.jpg?nf_resize=fit&w=500" ast="Yummy cake" />
+</picture>`;
 ```
 
 
