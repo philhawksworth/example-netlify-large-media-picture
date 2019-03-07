@@ -45,7 +45,7 @@ This shortcode:
 
 ```html
 {%- raw -%}
-{% picture photo.jpg "yummy cake" %}
+{% picture photo.jpg "Yummy cake" %}
 {% endraw %}
 ```
 
