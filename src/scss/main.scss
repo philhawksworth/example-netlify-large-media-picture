@@ -1,5 +1,6 @@
 @import '_variables';
 @import '_mixins';
+@import '_syntax';
 
 * {
   margin: 0;
@@ -7,11 +8,11 @@
 }
 
 ::-moz-selection {
-  background-color: $text-color;
+  background-color: $accent-color;
   color: $page-color;
 }
 ::selection {
-  background-color: $text-color;
+  background-color: $accent-color;
   color: $page-color;
 }
 
@@ -22,18 +23,22 @@ html {
 body {
   text-align: center;
   background-color: $page-color;
+  border-top: solid 8px $accent-color;
+  border-bottom: solid 8px $accent-color;
   color: mix($text-color, $page-color, 60%);
   font-family: sans-serif;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 14px;
+  line-height: 1.6;
   min-height: 100vh;
-  background-image: url('/images/bg-grid.png');
   @include bp(mid) {
     font-size: 18px;
   }
 }
 
+header {
+  display: block;
+}
 
 .container {
   margin-left: auto;
@@ -48,26 +53,25 @@ body {
   }
 }
 
-
 h1, h2, h3 {
   color: $text-color;
   font-weight: 600;
-  margin-top: 2em;
-  margin-bottom:0.2em;
+  padding-top: 2em;
+  padding-bottom:0.2em;
   line-height: 1;
 }
 h1 {
-  font-size: 3em;
-  margin-top:0.4em;
-  margin-bottom:0.2em;
-  line-height: 1;
 
   @include bp(mid) {
-    font-size: 5em;
+    font-size: 2.4em;
   }
   @include bp(wide) {
-    font-size: 6em;
+    font-size: 2.8em;
   }
+}
+
+h2 {
+  padding-top: 3em;
 }
 
 p {
@@ -75,102 +79,62 @@ p {
   margin-bottom: 1em;
 }
 
+.credit {
+  font-size: 0.6em;
+  text-align: right;
+  margin-bottom: 0.5rem;
+}
+
 .subtitle {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-top: 1em;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
 }
 
 ul, ol {
   padding-left: 1em;
 }
 
-a:link,
-a:visited {
+a {
   color: $text-color;
+  position:relative;
   text-decoration: none;
-  border-bottom: solid 1px mix($text-color, $page-color, 10%);
-}
-a:hover,
-a:focus {
-  color: $text-color;
-  border-bottom: solid 1px $text-color;
-}
-
-
-.nav {
-  padding-top: 3em;
-
-  li {
-    display: inline;
-  }
-
-  a:link,
-  a:visited {
-    display: inline-block;
-    border-top: solid 1px mix($text-color,$page-color, 60%);
-    border-bottom-style: none;
-    padding-top: 0.8em;
-    padding-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0.7em;
-    width: 8em;
-    text-align: left;
-    color: mix($text-color,$page-color, 80%);
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-      color: $text-color;
-      border-top: solid 1px $accent-color;
-      border-bottom-style: none;
-  }
-
-  small {
-    display: block;
-    font-size: 0.7em;
-    color: mix($text-color,$page-color, 60%);
-  }
-}
-
-
-code {
-  font-size: 0.8em;
-  background-color:  mix($accent-color, $page-color, 20%);
-  color: $text-color;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
+  transition: all 0.2s;
+  border-bottom: solid 1px #eee;
   white-space: nowrap;
+
+  &::after {
+    background: $accent-color;
+    bottom: -0.1rem;
+    content: '';
+    height: 0.1rem;
+    left: 50%;
+    position: absolute;
+    transform: scaleX(1);
+    transition: all 0.2s;
+    visibility: hidden;
+    width: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+    border-bottom-style: none;
+
+    &::after {
+      visibility: visible;
+      width: 100%;
+      left: 0;
+    }
+  }
 }
 
-.date {
-  font-size: 0.8em;
-  font-style: italic;
-}
 
-main {
-  margin-top: 4em;
-}
-
-pre {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
-  line-height: 1.2;
-  background-color:  mix($accent-color, $page-color, 10%);
-  border: solid 1px mix($accent-color, $page-color, 30%);
-  overflow: auto;
-  code {
-    border-style: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
+.post-teaser {
+  img {
+    width: 100%;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    margin-bottom: 3em;
   }
 }
 
@@ -186,11 +150,5 @@ footer {
   a:link,
   a:visited {
     color: mix($text-color, $page-color, 70%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
-  }
-  a:hover,
-  a:focus {
-    color: $accent-color;
-    border-bottom: solid 1px $text-color;
   }
 }

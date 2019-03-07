@@ -1,59 +1,70 @@
 ---
-title: EleventyOne
-subtitle: A project scaffold for getting building with Eleventy quickly.
-layout: layouts/base.njk
+title: Netlify Large Media & SrcSet
+layout: default
 ---
 
 
-## This site is a starting point
+## Image transformation
 
-From this point we should already have:
+If you manage your source image asset files with [Netlify Large Media](https://www.netlify.com/features/large-media/), you can take advantage of the ability to perform on-the-fly [image transformations](https://www.netlify.com/docs/image-transformation/) to deliver resized and cropped versions of the images directly from Netlify's ADN.
 
-- [Eleventy](https://11ty.io) with a skeleton site
-- A date format filter for Nunjucks
-- A tiny inline Sass pipeline
-- A tiny inline JS pipeline. (<a href="#" class="btn-log">Test a console.log message</a>)
-- JS [search index](/search.json) generator
-- Serverless (FaaS) development pipeline with Netlify Functions for Lambda
+Netlify transforms your image assets if add querystring parameters to your image src URLs.
+
+For example, the image below in various sizes:
+
+- [cupcake.jpg?nf_resize=fit&w320](/images/cupcake.jpg?nf_resize=fit&w380)
+- [cupcake.jpg?nf_resize=fit&w480](/images/cupcake.jpg?nf_resize=fit&w480)
+- [cupcake.jpg?nf_resize=fit&w800](/images/cupcake.jpg?nf_resize=fit&w800)
 
 
-## Post pages
+## Using srcset
 
-The pages found in in the posts
+These images have been added to the page in various sizes, using the image srcset attribute.
 
-<ul class="listing">
-{%- for page in collections.post -%}
-  <li>
-    <a href="{{ page.url }}">{{ page.data.title }}</a> -
-    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLL d, y") }}</time>
-  </li>
+{% set somePhotos = [
+  {url: "cupcake.jpg", credit: "Nathalie Jolie", creditURL: "https://unsplash.com/photos/2XK4UufbjdU"},
+  {url: "tea-and-cake.jpg", credit: "Oleg Ivanov", creditURL: "https://unsplash.com/photos/QbNaVnyMmfw"},
+  {url: "3-cupcakes.jpg", credit: "Clem Onojeghuo", creditURL: "https://unsplash.com/photos/hUGe-RCni3k"}
+] %}
+
+<section class="post-teaser">
+{%- for photo in somePhotos %}
+  <div class="credit">By <a href="{{ photo.creditURL }}" target="_BLANK" rel="noopener"> {{ photo.credit }}</a></div>
+  {% imageSet photo.url, "Yummy cake" %}
 {%- endfor -%}
-</ul>
-
-## Links from an external data source
-
-These links were sourced from [hawksworx.com](https://www.hawksworx.com/feed.json) at build time.
-
-<ul class="listing">
-{%- for item in hawksworx.entries.slice(0,5) -%}
-  <li>
-    <a href="{{ item.link }}">{{ item.title }}</a>
-  </li>
-{%- endfor -%}
-</ul>
+</section >
 
 
-The data can be stashed locally by running:
+## A srcset helper
 
-```
-yarn run seed
+Whatever tool you use to generate your HTML, chances are that it includes a facility to make shortcodes or macros.
+
+This example uses a static site generator called [11ty](https://www.11ty.io) which gives us the ability to make a [shortcode](https://www.11ty.io/docs/shortcodes/) to output img tags and srcset attributes with image transformation parameters automatically added to the urls.
+
+This shortcode:
+
+```html
+{%- raw -%}
+{% imageSet photo.jpg %}
+{% endraw %}
 ```
 
-It will then be available locally for building with:
+outputs this html:
 
+```html
+<img srcset="/images/photo.jpg?nf_resize=fit&w320 320w,
+             /images/photo.jpg?nf_resize=fit&w480 480w,
+             /images/photo.jpg?nf_resize=fit&w800 800w"
+     sizes="(max-width: 320px) 280px,
+            (max-width: 480px) 440px,
+            800px"
+     src="/images/photo.jpg?nf_resize=fit&w800">
 ```
-yarn start
-```
 
 
+## Get started with Netlify Large Media
+
+For examples and documentation about how to start using [Netlify Large Media](https://www.netlify.com/features/large-media/), you should [visit the docs](https://www.netlify.com/docs/large-media/).
+
+Need some reference code to get you going? You can use this site as an example, by [cloning it and creating a Netlify site automatically](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/netlify-statuskit) which you can then configure.
 

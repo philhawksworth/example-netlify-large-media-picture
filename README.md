@@ -1,26 +1,13 @@
-# EleventyOne
+# Example: Netlify Large Media and srcset
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/056b4a67-70e6-4af4-9be5-dee151b8e906/deploy-status)](https://app.netlify.com/sites/eleventyone/deploys)
-
-Phil's first port of call when starting another project using Eleventy.
-
-This project scaffold includes:
-
-- Eleventy with a skeleton site and some configs I use regularly
-- A date format filter for Nunjucks
-- Sass pipeline
-- JS pipeline
-- Serverless (FaaS) development pipeline with Netlify Functions for Lambda
-
-
-![Eleventy screenshot](./eleventyone-template.png)
+This is an example site to demonstrate the use of Netlify Large Media for managing source image assets and serving image transformations on-the-fly to populate different source images.
 
 
 ## Instructions
 
 To get your own instance of this 11ty starter project cloned and deploying to Netlify very quickly, just click the button below and follow the instructions.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/eleventyone)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/example-netlify-large-media-srcset)
 
 
 ## Wait, what happens when I click that button?
@@ -45,10 +32,10 @@ To build the site you need:
 ```bash
 
 # clone this repository
-git clone git@github.com:philhawksworth/eleventyone.git
+git clone git@github.com:philhawksworth/example-netlify-large-media-srcset.git
 
 # go to the working directory
-cd eleventyone
+cd example-netlify-large-media-srcset
 
 # install dependencies
 yarn
