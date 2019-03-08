@@ -6,9 +6,9 @@ layout: default
 
 ## Image transformation
 
-If you manage your source image asset files with [Netlify Large Media](https://www.netlify.com/features/large-media/), you can take advantage of the ability to perform on-the-fly [image transformations](https://www.netlify.com/docs/image-transformation/) to deliver resized and cropped versions of the images directly from Netlify's ADN.
+If you manage your source image asset files with [Netlify Large Media](https://www.netlify.com/features/large-media/), you can take advantage of the ability to perform on-the-fly [image transformations](https://www.netlify.com/docs/image-transformation/) to deliver resized and cropped versions of the images directly from [Netlify's ADN](https://www.netlify.com/features/adn/).
 
-Netlify transforms your image assets if add querystring parameters to your image src URLs.
+Netlify transforms and caches your image assets if you add querystring parameters to your image src URLs.
 
 For example, the image below in various sizes:
 
