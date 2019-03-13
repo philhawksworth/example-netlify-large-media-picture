@@ -71,7 +71,7 @@ For the sake of readability and maintainability, we can use Netlify's redirects 
   status = 200
 ```
 
-{%- for photo in somePhotos %}
+{% for photo in somePhotos %}
 - <img src="/images/thumbnail/{{ photo.url }}" alt="Yummy cake" />
 {% endfor %}
 

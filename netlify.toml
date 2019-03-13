@@ -7,4 +7,4 @@
 [[redirects]]
   from = "/images/thumbnail/*"
   to = "/images/:splat?nf_resize=smartcrop&w=100&h=100"
-  status = 200
+  # status = 200
