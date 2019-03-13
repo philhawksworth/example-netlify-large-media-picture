@@ -62,7 +62,13 @@ outputs this html:
 
 ## Using Netlify redirects as macros
 
-For the sake of readability and maintainabilirt
+For the sake of readability and maintainability, we can use Netlify's redirects to format some requests en route.
+
+```
+[[redirects]]
+  from = "/images/thumbnail/*"
+  to = "/image/:splat?nf_resize=smartcrop?w=100&h=100"
+```
 
 {%- for photo in somePhotos %}
 - <img src="/images/thumbnail/{{ photo.url }}" alt="Yummy cake" />
