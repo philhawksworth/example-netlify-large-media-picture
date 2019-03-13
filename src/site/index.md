@@ -64,10 +64,11 @@ outputs this html:
 
 For the sake of readability and maintainability, we can use Netlify's redirects to format some requests en route.
 
-```
+```bash
 [[redirects]]
   from = "/images/thumbnail/*"
-  to = "/image/:splat?nf_resize=smartcrop?w=100&h=100"
+  to = "/images/:splat?nf_resize=smartcrop&w=100&h=100"
+  status = 200
 ```
 
 {%- for photo in somePhotos %}
