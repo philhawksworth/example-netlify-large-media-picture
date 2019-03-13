@@ -60,6 +60,14 @@ outputs this html:
 ```
 
 
+## Using Netlify redirects as macros
+
+{%- for photo in somePhotos %}
+- <img src="/images/thumbnail/{{ photo.url }}" alt="Yummy cake" />
+{% endfor %}
+
+
+
 ## Get started with Netlify Large Media
 
 Need some reference code to get you going? You can clone [the code for this site]({{ pkg.repository.url }}) to use as an example.

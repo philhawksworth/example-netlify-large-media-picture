@@ -2,3 +2,8 @@
   command = "yarn run build"
   publish = "dist"
   NODE_ENV = "10.15.3"
+
+
+[[redirects]]
+  from = "/images/thumbnail/*"
+  to = "/image/:splat?nf_resize=smartcrop?w=100&h=100"
