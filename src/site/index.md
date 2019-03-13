@@ -62,6 +62,8 @@ outputs this html:
 
 ## Using Netlify redirects as macros
 
+For the sake of readability and maintainabilirt
+
 {%- for photo in somePhotos %}
 - <img src="/images/thumbnail/{{ photo.url }}" alt="Yummy cake" />
 {% endfor %}
