@@ -6,7 +6,7 @@ layout: default
 
 ## Image transformation
 
-If you manage your source image asset files with [Netlify Large Media](https://www.netlify.com/features/large-media/), you can take advantage of the ability to perform on-the-fly [image transformations](https://www.netlify.com/docs/image-transformation/) to deliver resized and cropped versions of the images directly from [Netlify's ADN](https://www.netlify.com/features/adn/).
+If you manage your source image asset files with [Netlify Large Media](https://www.netlify.com/features/large-media/?utm_source=github&utm_medium=nlm-example-pnh&utm_campaign=devex), you can take advantage of the ability to perform on-the-fly [image transformations](https://www.netlify.com/docs/image-transformation/?utm_source=github&utm_medium=nlm-example-pnh&utm_campaign=devex) to deliver resized and cropped versions of the images directly from [Netlify's ADN](https://www.netlify.com/features/adn/?utm_source=github&utm_medium=nlm-example-pnh&utm_campaign=devex).
 
 Netlify transforms and caches your image assets if you add querystring parameters to your image src URLs.
 
@@ -64,5 +64,5 @@ outputs this html:
 
 Need some reference code to get you going? You can clone [the code for this site]({{ pkg.repository.url }}) to use as an example.
 
-Once cloned, you can find examples and documentation on how to configure [Netlify Large Media](https://www.netlify.com/features/large-media/), in [the docs](https://www.netlify.com/docs/large-media/).
+Once cloned, you can find examples and documentation on how to configure [Netlify Large Media](https://www.netlify.com/features/large-media/), in [the docs](https://www.netlify.com/docs/large-media/?utm_source=github&utm_medium=nlm-example-pnh&utm_campaign=devex).
 
