@@ -3175,9 +3175,9 @@ lru-cache@^4.0.1, lru-cache@^4.1.5:
     yallist "^2.1.2"
 
 luxon@^1.9.0:
-  version "1.11.4"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.11.4.tgz#c5d8c1f795cee26c162e95a4686632abcec50442"
-  integrity sha512-zTQ1DCShOGHIdNpa56yjDpUCowKDsBqeFVuEG2XBcrAM2udxN0g3N5RTZzbw94OkDiBgECsuDgLNnQTo73yghw==
+  version "1.28.1"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.28.1.tgz#528cdf3624a54506d710290a2341aa8e6e6c61b0"
+  integrity sha512-gYHAa180mKrNIUJCbwpmD0aTu9kV0dREDrwNnuyFAsO1Wt0EVYSZelPnJlbj9HplzXX/YWXHFTL45kvZ53M0pw==
 
 make-iterator@^1.0.0:
   version "1.0.1"
